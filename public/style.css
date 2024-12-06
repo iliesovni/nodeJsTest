@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #f3f3f3;
+  }
+  canvas {
+    display: block;
+    background-image: url('https://t4.ftcdn.net/jpg/02/98/21/71/360_F_298217175_oEfbikdbPeyEPWtTHoBiGFh5C3COKv4y.jpg');
+  }
+  
