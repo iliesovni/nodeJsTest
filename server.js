@@ -40,25 +40,14 @@ function mangerPellets(player) {
     if (verifCollision(player, pellet)) {
       player.taille += 1;
       pelletsmanges.push(pellet.id);
-      //creerPellets(1);
 
-      //bug sur l'ajout de pellet quand un est mangé (peut etre au lieu de generer un nouveau pellet, modifier le pellet mangé)
-      const newPellet = {
-        id: pellets.length + Math.random(),
-        x: Math.random() * MAP_WIDTH,
-        y: Math.random() * MAP_HEIGHT,
-        taille: 5,
-        couleur: '#' + Math.floor(Math.random() * 16777215).toString(16),
-      };
-      pellets.push(newPellet);
-
-      console.log('nouvo pellet:', newPellet);
-      console.log('der pellet:', pellets[pellets.length - 1]);
-
-      return false;
+      pellet.x = Math.random() * MAP_WIDTH;
+      pellet.y = Math.random() * MAP_HEIGHT;
+      pellet.couleur = '#' + Math.floor(Math.random() * 16777215).toString(16);
+      console.log('pellet repositionné:', pellet);
+      return true;
     }
 
-    //io.emit('pelletsFini', pelletsmanges);
     io.emit('PelletsMAJ', pellets);
     return true;
   });
